@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Payal ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="welcome">
+
+        <div class="hearts">
+            ❤️ 💕 ❤️ 💕 ❤️
+        </div>
+
+        <h1>Hey Payal 💖</h1>
+
+        <p>I have a little surprise for you...</p>
+
+        <div class="gift" onclick="openGift()">
+            🎁
+        </div>
+
+        <button onclick="openGift()">
+            Open Your Surprise 💝
+        </button>
+
+    </div>
+
+
+    <div class="birthday" id="birthday">
+
+        <h1>
+            🎉 Happy Birthday, Payal! 🎉
+        </h1>
+
+        <div class="cake">
+            🎂
+        </div>
+
+        <h2>
+            Today is your special day ❤️
+        </h2>
+
+        <p>
+            Someone very special deserves a very special birthday. 💕
+        </p>
+
+        <button onclick="showMessage()">
+            💌 Open Your Message
+        </button>
+
+        <div id="message"></div>
+        <!-- Music Player -->
+<div class="music-player">
+
+    <button id="musicButton" onclick="toggleMusic()">
+    🎵 Play Music
+</button>
+
+<audio id="birthdayMusic" controls loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+</audio>
+
+</div>
+        <section class="memories" id="memories">
+
+    <h2>your Beautiful Memories ❤️</h2>
+
+    <p class="memory-subtitle">
+        Every picture holds a beautiful moment ✨
+    </p>
+
+    <div class="photo-gallery">
+
+        <div class="photo-card">
+            <img src="images/photo1.jpeg" alt="Memory 1" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo2.jpeg" alt="Memory 2" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo3.jpeg" alt="Memory 3" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo4.jpeg" alt="Memory 4" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo5.jpeg" alt="Memory 5" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo6.jpeg" alt="Memory 6" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo7.jpeg" alt="Memory 7" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo8.jpeg" alt="Memory 8" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo9.jpeg" alt="Memory 9" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo10.jpeg" alt="Memory 10" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo11.jpeg" alt="Memory 11" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo12.jpeg" alt="Memory 12" onclick="openPhoto(this)">
+        </div>
+
+       <div class="photo-card">
+    <img src="images/photo13.jpeg" alt="Memory 13" onclick="openPhoto(this)">
+</div>
+
+        <div class="photo-card">
+            <img src="images/photo14.jpeg" alt="Memory 14" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo15.jpeg" alt="Memory 15" onclick="openPhoto(this)">
+        </div>
+
+        <div class="photo-card">
+            <img src="images/photo16.jpeg" alt="Memory 16" onclick="openPhoto(this)">
+        </div>
+
+    </div>
+
+</section>
+<!-- Final Surprise -->
+<section class="final-surprise">
+
+    <div class="final-heart">❤️</div>
+
+    <h2>One Last Thing... 💌</h2>
+
+    <p>
+        No matter how many beautiful memories we make,
+        I hope we make a million more together. ❤️
+    </p>
+
+    <p class="final-message">
+        You are truly special. 🌸<br>
+        Keep smiling, keep shining,<br>
+        and always remember how loved you are. 💕
+    </p>
+
+    <h3>
+        Happy Birthday, Payal! 🎂❤️
+    </h3>
+
+    <div class="final-decoration">
+        🌸 ✨ 💖 ✨ 🌸
+    </div>
+
+</section>
+    </div>
+
+<!-- Photo Popup -->
+<div class="photo-popup" id="photoPopup">
+
+    <button class="close-photo" onclick="closePhoto()">✕</button>
+
+    <button class="prev-photo" onclick="previousPhoto()">❮</button>
+
+    <img id="popupImage" src="" alt="Beautiful Memory">
+
+    <button class="next-photo" onclick="nextPhoto()">❯</button>
+
+    <p id="photoCaption">Beautiful memory ❤️</p>
+
+</div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

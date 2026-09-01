@@ -1,0 +1,971 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #ff758c,
+        #ff7eb3,
+        #ffd1dc
+    );
+
+    color: white;
+}
+
+
+/* =========================
+   WELCOME SCREEN
+========================= */
+
+.welcome {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+}
+
+.hearts {
+    font-size: 35px;
+    margin-bottom: 25px;
+
+    animation: floating 2s infinite alternate;
+}
+
+.welcome h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift {
+    font-size: 120px;
+    margin: 25px;
+
+    cursor: pointer;
+
+    animation: giftBounce 1.5s infinite;
+    transition: transform 0.3s;
+}
+
+.gift:hover {
+    transform: scale(1.15);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    background: white;
+    color: #ff4f81;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   BIRTHDAY SCREEN
+========================= */
+
+.birthday {
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 50px 20px;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+.birthday h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.cake {
+    font-size: 130px;
+    margin: 25px;
+
+    animation: bounce 1.5s infinite;
+}
+
+.birthday h2 {
+    margin-bottom: 20px;
+}
+
+.birthday p {
+    font-size: 20px;
+
+    max-width: 700px;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+#message {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.love-letter {
+    position: relative;
+
+    width: min(650px, 90%);
+
+    padding: 45px 50px;
+
+    background: #fffaf2;
+
+    color: #6b4050;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25),
+        0 0 0 8px rgba(255, 255, 255, 0.2);
+
+    text-align: left;
+
+    animation: letterOpen 1s ease forwards;
+
+    transform-origin: top center;
+}
+
+
+/* Paper lines */
+
+.love-letter::before {
+    content: "";
+
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    top: 25px;
+    bottom: 25px;
+
+    border: 1px solid rgba(255, 150, 170, 0.35);
+
+    pointer-events: none;
+}
+
+
+/* Heart */
+
+.letter-heart {
+    text-align: center;
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+    animation: heartBeat 1.2s infinite;
+}
+
+
+/* Letter heading */
+
+.love-letter h2 {
+    text-align: center;
+
+    font-size: 32px;
+
+    color: #e84a72;
+
+    margin-bottom: 25px;
+
+    font-family: "Brush Script MT", cursive;
+}
+
+
+/* Letter paragraphs */
+
+.love-letter p {
+    position: relative;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+/* Birthday line */
+
+.love-letter .special-line {
+    text-align: center;
+
+    color: #e84a72;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-top: 25px;
+}
+
+
+/* Ending */
+
+.love-letter .ending {
+    text-align: right;
+
+    font-style: italic;
+
+    margin-top: 25px;
+}
+
+
+/* Decorations */
+
+.letter-decoration {
+    text-align: center;
+
+    font-size: 24px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -40px;
+
+    pointer-events: none;
+
+    z-index: 1000;
+
+    animation: heartFloat 6s linear forwards;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes giftBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(-5deg);
+    }
+}
+
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+@keyframes floating {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+
+@keyframes letterOpen {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+
+@keyframes heartFloat {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .welcome h1 {
+        font-size: 35px;
+    }
+
+    .welcome p {
+        font-size: 18px;
+    }
+
+    .gift {
+        font-size: 90px;
+    }
+
+    .birthday h1 {
+        font-size: 35px;
+    }
+
+    .cake {
+        font-size: 100px;
+    }
+
+    .love-letter {
+        padding: 35px 25px;
+    }
+
+    .love-letter h2 {
+        font-size: 28px;
+    }
+
+    .love-letter p {
+        font-size: 16px;
+    }
+}/* =========================
+   MEMORIES SECTION
+========================= */
+
+.memories {
+    width: 100%;
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.memories h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+
+    color: white;
+}
+
+.memory-subtitle {
+    font-size: 19px;
+    margin-bottom: 40px;
+}
+
+
+/* PHOTO GRID */
+
+.photo-gallery {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* PHOTO CARD */
+
+.photo-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: white;
+
+    padding: 7px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* PHOTO */
+
+.photo-card img {
+    width: 100%;
+    height: 240px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 13px;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* HOVER EFFECT */
+
+.photo-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+
+    box-shadow:
+        0 20px 35px rgba(0, 0, 0, 0.3);
+}
+
+.photo-card:hover img {
+    transform: scale(1.08);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-card img {
+        height: 200px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 300px;
+    }
+
+    .memories h2 {
+        font-size: 32px;
+    }
+}
+/* =========================
+   PHOTO POPUP
+========================= */
+
+.photo-popup {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(40, 10, 25, 0.92);
+
+    z-index: 9999;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    padding: 30px;
+
+    animation: popupFade 0.4s ease;
+}
+
+.photo-popup img {
+    max-width: 90%;
+    max-height: 75vh;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+
+    animation: photoZoom 0.5s ease;
+}
+
+.photo-popup p {
+    color: white;
+
+    font-size: 22px;
+
+    margin-top: 20px;
+}
+
+.close-photo {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #ff4f81;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 10000;
+}
+
+.close-photo:hover {
+    transform: scale(1.1);
+}
+
+@keyframes popupFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes photoZoom {
+
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* =========================
+   SLIDESHOW BUTTONS
+========================= */
+
+.prev-photo,
+.next-photo {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #ff4f81;
+
+    font-size: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 10001;
+
+    transition: all 0.3s ease;
+}
+
+.prev-photo {
+    left: 30px;
+}
+
+.next-photo {
+    right: 30px;
+}
+
+.prev-photo:hover,
+.next-photo:hover {
+    transform: translateY(-50%) scale(1.15);
+
+    background: white;
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .prev-photo,
+    .next-photo {
+        width: 45px;
+        height: 45px;
+
+        font-size: 22px;
+    }
+
+    .prev-photo {
+        left: 10px;
+    }
+
+    .next-photo {
+        right: 10px;
+    }
+}
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-player {
+    margin: 30px auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+#musicButton {
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #ff4f81;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+#musicButton:hover {
+    transform: scale(1.08);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+/* =========================
+   FINAL SURPRISE
+========================= */
+
+.final-surprise {
+    width: 90%;
+    max-width: 700px;
+
+    margin: 80px auto 40px;
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+    animation: finalAppear 1.5s ease;
+}
+
+.final-heart {
+    font-size: 65px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.final-surprise h2 {
+    margin: 15px 0;
+
+    font-size: 32px;
+
+    color: #ff4f81;
+}
+
+.final-surprise p {
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #555;
+}
+
+.final-message {
+    margin-top: 25px;
+
+    font-size: 20px !important;
+
+    color: #ff4f81 !important;
+}
+
+.final-surprise h3 {
+    margin-top: 30px;
+
+    font-size: 25px;
+
+    color: #ff4f81;
+}
+
+.final-decoration {
+    margin-top: 25px;
+
+    font-size: 25px;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* =========================
+   MOBILE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .welcome {
+        padding: 25px 15px;
+        min-height: 100vh;
+    }
+
+    .welcome h1 {
+        font-size: 32px;
+    }
+
+    .welcome p {
+        font-size: 16px;
+    }
+
+    .gift {
+        font-size: 80px;
+    }
+
+    .birthday {
+        padding: 25px 12px;
+    }
+
+    .birthday h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .birthday h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .birthday p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .love-letter {
+        width: 90%;
+        padding: 25px 18px;
+    }
+
+    .love-letter h2 {
+        font-size: 25px;
+    }
+
+    .love-letter p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    /* Photo Gallery */
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .photo-card img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    /* Music */
+
+    .music-player {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Final Surprise */
+
+    .final-surprise {
+        width: 88%;
+        padding: 35px 18px;
+        margin-top: 50px;
+    }
+
+    .final-surprise h2 {
+        font-size: 27px;
+    }
+
+    .final-surprise p {
+        font-size: 16px;
+    }
+
+    .final-message {
+        font-size: 18px !important;
+    }
+
+    /* Photo Popup */
+
+    .photo-popup {
+        padding: 15px;
+    }
+
+    #popupImage {
+        max-width: 90%;
+        max-height: 70vh;
+    }
+
+    .prev-photo,
+    .next-photo {
+        font-size: 22px;
+        padding: 8px;
+    }
+
+}
